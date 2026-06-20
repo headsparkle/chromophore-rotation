@@ -1,0 +1,10 @@
+correlation,rho,ci_lo,ci_hi,n
+red d_exp/QY per crystal,-0.489,-0.69,-0.238,56
+red d_exp/QY per unique,-0.345,-0.636,-0.001,38
+NRQ d_exp/QY per unique,-0.446,-0.757,-0.007,25
+CRQ d_exp/QY per crystal,-0.676,-0.935,-0.196,12
+green d_exp/QY per unique,-0.029,-0.321,0.263,52
+cyan f_allowed/QY per unique,-0.833,-0.967,-0.497,15
+cyan f_allowed_P/QY per unique,-0.742,-0.948,-0.348,15
+b_factor_ratio/QY per unique,-0.373,-0.516,-0.212,141
+n_polar_O2_32/QY per unique,0.365,0.191,0.522,141

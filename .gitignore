@@ -1,0 +1,48 @@
+# Default-deny whitelist: this repo tracks ONLY the public deposit set
+# (analysis code + core data tables + README/manifest + the build script).
+# Everything else stays local: Word masters & backups, cif/pqr/scans bulk,
+# logs, figures, the built zip, .claude, CLAUDE.md, manuscript files.
+
+/*
+!/.gitignore
+!/scripts/
+!/DEPOSIT_README.md
+!/MANIFEST_deposit.txt
+!/make_deposit.sh
+!/data/
+
+# scripts: only Python
+/scripts/*
+!/scripts/*.py
+
+# data: only the core tables + the 4 relaxed-scan grids
+/data/*
+!/data/supplementary_SD1_per_structure.csv
+!/data/supplementary_SD2_per_unique_fp.csv
+!/data/merged_for_aggregate.csv
+!/data/scan_all_summary.csv
+!/data/scan_1d_summary.csv
+!/data/d_exp_canonical.csv
+!/data/canonical_cd_twist.csv
+!/data/d_exp_altloc_fixed.csv
+!/data/lit_qy_curated.csv
+!/data/pdb_sequences.csv
+!/data/hb_contacts.csv
+!/data/gatekeeper_summary.csv
+!/data/gatekeeper_hits.csv
+!/data/gatekeeper_boundary_summary.csv
+!/data/matched_pairs.csv
+!/data/matched_pairs_permutation.csv
+!/data/loocv_results.csv
+!/data/loocv_predictions.csv
+!/data/bootstrap_cis.csv
+!/data/twist_decomposition.csv
+!/data/eval_confirmatory.csv
+!/data/heteroatom_sensitivity.csv
+!/data/relaxed_param_sweep.csv
+!/data/gatekeeper_energy_203.csv
+!/data/gatekeeper_energy_203_real.csv
+!/data/relaxed_scans/
+/data/relaxed_scans/*
+!/data/relaxed_scans/*.npz
+
