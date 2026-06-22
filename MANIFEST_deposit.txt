@@ -1,7 +1,7 @@
 # Deposit manifest -- chromophore-rotation
-# Regenerated 2026-06-21. Core code+data only; excludes cif/pqr/scans (see DEPOSIT_README.md).
+# Regenerated 2026-06-22. Core code+data only; excludes cif/pqr/scans (see DEPOSIT_README.md).
 
-## scripts/ (82 Python files)
+## scripts/ (83 Python files)
   _extract_new_numbers.py
   aggregate.py
   apply_supp_symbols_ref12.py
@@ -44,6 +44,7 @@
   make_figure3.py
   make_method_schematic.py
   make_pub_figures.py
+  matched_pair_enrichment.py
   matched_pairs.py
   md_to_docx.py
   merge_manuscript.py
@@ -85,7 +86,7 @@
   validate_esp_apbs.py
   verify_manuscript_numbers.py
 
-## data/ (27 core tables + relaxed_scans/)
+## data/ (29 core tables + relaxed_scans/)
   supplementary_SD1_per_structure.csv
   supplementary_SD2_per_unique_fp.csv
   merged_for_aggregate.csv
@@ -113,4 +114,6 @@
   gatekeeper_energy_203_real.csv
   avgfp_numbering_check.csv          # S13 avGFP-numbering validation (check_avgfp_numbering.py)
   leverage_control.csv               # S14 I-bond/P-bond lever-arm control (leverage_control.py)
+  gatekeeper_boundary.csv            # per-structure 2D boundary wall atoms (input to matched_pair_enrichment.py)
+  matched_pair_enrichment.csv        # Fig 3c / S6 matched-pair gatekeeper enrichment (matched_pair_enrichment.py)
   relaxed_scans/relaxed_{1EMA,5LK4,3KCS,2YE0}.npz   # 4 grids backing Figure S4

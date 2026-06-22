@@ -44,6 +44,8 @@
 !/data/gatekeeper_energy_203_real.csv
 !/data/avgfp_numbering_check.csv
 !/data/leverage_control.csv
+!/data/gatekeeper_boundary.csv
+!/data/matched_pair_enrichment.csv
 !/data/relaxed_scans/
 /data/relaxed_scans/*
 !/data/relaxed_scans/*.npz

@@ -41,6 +41,8 @@ CORE_CSVS=(
   gatekeeper_energy_203_real.csv
   avgfp_numbering_check.csv
   leverage_control.csv
+  gatekeeper_boundary.csv
+  matched_pair_enrichment.csv
 )
 for f in "${CORE_CSVS[@]}"; do
   if [ -f "data/$f" ]; then cp "data/$f" "$OUT/data/"; else echo "WARN missing data/$f"; fi
