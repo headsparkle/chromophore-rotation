@@ -1,7 +1,7 @@
 # Deposit manifest -- chromophore-rotation
-# Regenerated 2026-06-20. Core code+data only; excludes cif/pqr/scans (see DEPOSIT_README.md).
+# Regenerated 2026-06-21. Core code+data only; excludes cif/pqr/scans (see DEPOSIT_README.md).
 
-## scripts/ (79 Python files)
+## scripts/ (82 Python files)
   _extract_new_numbers.py
   aggregate.py
   apply_supp_symbols_ref12.py
@@ -11,6 +11,7 @@
   bootstrap_cis.py
   build_supplementary_csv.py
   canonical_cd_twist.py
+  check_avgfp_numbering.py
   compare_1gfl_literature.py
   compare_grid_density.py
   compute_esp_at_op.py
@@ -36,6 +37,7 @@
   insert_eval_confirmatory.py
   insert_relaxed_energy_sections.py
   investigate_yellow_minus_ht.py
+  leverage_control.py
   loocv_validation.py
   make_figS2_orientation.py
   make_figS4_panel.py
@@ -63,6 +65,7 @@
   recover_qy_by_sequence.py
   redo_refinement_control.py
   reformat_refs_biophysj.py
+  regen_table2_canonical.py
   relaxed_energy_scan.py
   relaxed_param_sweep.py
   reorder_abstract_intro.py
@@ -82,7 +85,7 @@
   validate_esp_apbs.py
   verify_manuscript_numbers.py
 
-## data/ (25 core tables + relaxed_scans/)
+## data/ (27 core tables + relaxed_scans/)
   supplementary_SD1_per_structure.csv
   supplementary_SD2_per_unique_fp.csv
   merged_for_aggregate.csv
@@ -108,4 +111,6 @@
   relaxed_param_sweep.csv
   gatekeeper_energy_203.csv
   gatekeeper_energy_203_real.csv
+  avgfp_numbering_check.csv          # S13 avGFP-numbering validation (check_avgfp_numbering.py)
+  leverage_control.csv               # S14 I-bond/P-bond lever-arm control (leverage_control.py)
   relaxed_scans/relaxed_{1EMA,5LK4,3KCS,2YE0}.npz   # 4 grids backing Figure S4

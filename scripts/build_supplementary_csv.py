@@ -101,18 +101,25 @@ def main():
     print(f"SD1 per-structure: {len(out)} rows, {out.shape[1]} cols "
           f"-> supplementary_SD1_per_structure.csv")
 
-    # ---- SD2: collapse to one row per unique FP (median of numerics) --------
+    # ---- SD2: one row per unique FP PER COLOR CLASS -------------------------
+    # Color-first grouping (consistent with the per-color QY analysis and
+    # Table 2): the grouping key is (fp_slug, color_class), so a photoconvertible
+    # FP with distinct color states (e.g. mEos4b green/red) contributes one row
+    # per state. This is what gives the per-class counts used throughout (red 38)
+    # and keeps SD2 consistent with the recomputed analysis.
     grp = out.dropna(subset=["fp_slug"]).copy()
+    grp["color_class"] = grp["color_class"].fillna("unknown")
     num = grp.select_dtypes(include=[np.number]).columns.tolist()
-    cat_first = ["fp_name", "color_class", "chromophore_code", "chromophore_type",
+    cat_first = ["fp_name", "chromophore_code", "chromophore_type",
                  "qy_provenance"]
     agg = {c: "median" for c in num}
     for c in cat_first:
         if c in grp.columns:
             agg[c] = "first"
-    sd2 = grp.groupby("fp_slug").agg(agg)
-    sd2.insert(0, "n_structures", grp.groupby("fp_slug").size())
-    sd2.insert(1, "pdb_ids", grp.groupby("fp_slug")["pdb_id"].apply(
+    keys = ["fp_slug", "color_class"]
+    sd2 = grp.groupby(keys).agg(agg)
+    sd2.insert(0, "n_structures", grp.groupby(keys).size())
+    sd2.insert(1, "pdb_ids", grp.groupby(keys)["pdb_id"].apply(
         lambda s: ";".join(sorted(s))))
     sd2 = sd2.reset_index()
     # order columns: id, name, class, counts, then metrics
@@ -121,7 +128,7 @@ def main():
             "qy_provenance"]
     lead = [c for c in lead if c in sd2.columns]
     sd2 = sd2[lead + [c for c in sd2.columns if c not in lead]]
-    sd2 = sd2.sort_values("fp_slug").reset_index(drop=True)
+    sd2 = sd2.sort_values(["fp_slug", "color_class"]).reset_index(drop=True)
     sd2.to_csv(DATA / "supplementary_SD2_per_unique_fp.csv", index=False)
     print(f"SD2 per-unique-FP: {len(sd2)} rows, {sd2.shape[1]} cols "
           f"-> supplementary_SD2_per_unique_fp.csv")

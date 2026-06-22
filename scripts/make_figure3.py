@@ -126,10 +126,8 @@ def main():
                     xytext=(-6, 16), fontsize=8, fontweight="bold", ha="center",
                     color="black")
 
-    ax.set_title(f"Red FPs: resting twist vs quantum yield\n"
-                 f"per unique FP, primary: "
-                 f"$\\rho$ = {rho_u:+.2f}, p = {p_u:.2f}, n = {len(uni)}",
-                 fontsize=10)
+    # No panel title: the figure caption carries the description and the
+    # rho/p/n statistics (avoids duplicating the caption; "resting" retired).
     ax.set_xlabel("chromophore distance from planar, $d_{\\mathrm{exp}}$ (deg)")
     ax.set_ylabel("quantum yield (FPbase)")
     ax.legend(loc="lower left", fontsize=8, framealpha=0.92)
