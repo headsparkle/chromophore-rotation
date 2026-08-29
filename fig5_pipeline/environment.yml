@@ -1,0 +1,12 @@
+name: fig5
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pymol-open-source>=3.0     # headless-capable PyMOL (open source)
+  - gemmi>=0.6                 # structure parsing for the scan core
+  - numpy>=1.24
+  - scipy>=1.10
+  - matplotlib>=3.7
+  # xvfb is a system package, not conda; install via the cluster module
+  # system or `apt-get install xvfb` if PyMOL needs a GL context (see README).

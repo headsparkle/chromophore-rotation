@@ -50,3 +50,18 @@
 /data/relaxed_scans/*
 !/data/relaxed_scans/*.npz
 
+# Figure 5 build pipeline: track source only (scripts, config, README).
+# Generated outputs stay local: fetched .cif, rendered .png/.pdf, .npz,
+# and the structures/ working directory.
+!/fig5_pipeline/
+/fig5_pipeline/*
+!/fig5_pipeline/*.md
+!/fig5_pipeline/*.py
+!/fig5_pipeline/*.pml
+!/fig5_pipeline/*.sh
+!/fig5_pipeline/*.slurm
+!/fig5_pipeline/*.yml
+!/fig5_pipeline/scan/
+/fig5_pipeline/scan/*
+!/fig5_pipeline/scan/*.py
+
